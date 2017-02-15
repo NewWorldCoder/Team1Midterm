@@ -1,5 +1,6 @@
-/**
- * Created by Mike on 2/15/2017.
- */
-public class LibraryApp {
+public class Main {
+
+    public static void main(String[] args) {
+
+    }
 }
