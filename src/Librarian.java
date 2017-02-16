@@ -24,10 +24,15 @@ public class Librarian {
         this.ldb = ldb;
     }
 
+    /**
+     * YK - Prints a numbered list according to the ArrayList returned by LibraryDataBase
+     * @param list ArrayList created by the LibraryDataBase
+     */
     public void printArray(ArrayList list) {
 
+        // YK - Print a numbered list according to
         for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).toString());
+            System.out.println((i+1) + ". " + list.get(i).toString());
         }
 
         return;
