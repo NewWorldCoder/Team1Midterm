@@ -27,7 +27,7 @@ public class Librarian {
     public void printArray(ArrayList list) {
 
         for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.toString());
+            System.out.println(list.get(i).toString());
         }
 
         return;
