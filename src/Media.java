@@ -93,13 +93,19 @@ abstract class Media {
         // Set the check-out date
         setCheckOutDate(Calendar.getInstance());
 
-        // Set the due date
-        //setDueDate(Calendar.getInstance().get);
+        // Set the due date, two weeks from checkout
+        Calendar twoWeeksFromCO = Calendar.getInstance();
+        twoWeeksFromCO.add(Calendar.DAY_OF_YEAR, 14);
+        setDueDate(twoWeeksFromCO);
 
         // Successfully checked out media
         return true;
     }
 
+    /**
+     * This method return a string of the title, author, and category, separated by string
+     * @return string of the title, author, and category, separated by string
+     */
     public String getTitleAuthorCat() {
         return getTitle() + ", " + getAuthor() + ", " + getCategory();
     }
