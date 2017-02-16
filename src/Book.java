@@ -15,4 +15,5 @@ public class Book extends Media {
         super.setAuthor(author);
         super.setType(MediaType.BOOK);
     }
+    
 }

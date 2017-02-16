@@ -8,44 +8,62 @@ import java.util.ArrayList;
 
 public class LibraryDataBase {
 
-    public static void printMediaDatabase(){
-    String med = readTextFromFile("docs/Team1LibraryDbase.csv");
+    public LibraryDataBase(String filename) {
+        String med = readTextFromFile(filename);
 
 
-    String[] byLine = med.split("\\n");
-    String[] columns;
-    ArrayList<Media> mediaList = new ArrayList<Media>();
-
-    for(int i = 1;i<=19;i++)
-    {
-        columns = byLine[i].split(","); //populates columns array with split of each line with a comma delimiter
-
-        mediaList.add(new Book(columns[1], columns[2],columns[3]));//populates mediaList with Book objects
+        String[] byLine = med.split("\\n");
+        String[] columns;
 
 
-        System.out.println(mediaList.get(i-1).getAuthor()); // Prints book objects to console.
+        for(int i = 1;i<=19;i++)
+        {
+            columns = byLine[i].split(","); //populates columns array with split of each line with a comma delimiter
+
+            mediaList.add(new Book(columns[1], columns[2],columns[3]));//populates mediaList with Book objects
+
+
+
+
+
+        }
+    }
+
+    private ArrayList<Media> mediaList = new ArrayList<Media>();
+
+
+
+    public void printMediaDatabase() {
+
+        for (int i = 0; i < mediaList.size(); i++) {
+
+            System.out.println(mediaList.get(i).getAuthor()); // Prints book objects to console.
+
+        }
+    }
+
+    public ArrayList getAllAuthor(String author){
+
+        ArrayList<Media> mediaListAuthors = new ArrayList<Media>();
+        for(int i = 0;i<19;i++)
+        {
+           if(mediaList.get(i).getAuthor().equalsIgnoreCase(author)){
+               mediaListAuthors.add(mediaList.get(i));//creates new ArrayList to store books that have the
+               //specified authors.
+
+           }
+           else{
+               continue;
+           }
+
+
+        }
+
+        return mediaListAuthors;
+
 
 
     }
-
-}
-
-//    public ArrayList getAllAuthor(String author){
-//        ArrayList<Media> mediaList = new ArrayList<Media>();
-//        ArrayList<Media> mediaListAuthors = new
-//        for(int i = 1;i<=19;i++)
-//        {
-//           if(mediaList.get(i).getAuthor().equalsIgnoreCase(author)){
-//               mediaListAuthors.add(mediaList.get(i))
-//
-//           }
-//
-//
-//        }
-//
-//
-//
-//    }
 
 
 

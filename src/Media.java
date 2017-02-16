@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,11 +12,10 @@ abstract class Media {
     private String author;                                                   // Holds the author of the Media object
     static enum MediaStatus {ON_SHELF, CHECKED_OUT, OVERDUE, ON_HOLD};       // Enum for status of the Media object
     private MediaStatus status;                                              // Status for Media Object
-    private Date checkoutDate;                                               // Holds the checkout date
-    private Date dueDate;                                                    // Holds the due date
+    private Calendar checkOutDate;                                               // Holds the checkout date
+    private Calendar dueDate;                                                    // Holds the due date
     static enum MediaType {BOOK, CD, DVD, AUDIO_BOOK, PERIODICAL, REFERENCE} // Enum for the type of the Media object
     private MediaType type;
-
 
 
     // Getters and Setters
@@ -51,12 +51,12 @@ abstract class Media {
         this.status = status;
     }
 
-    private Date getCheckoutDate() {
-        return checkoutDate;
+    private Calendar getCheckOutDate() {
+        return checkOutDate;
     }
 
-    private void setCheckoutDate(Date checkoutDate) {
-        this.checkoutDate = checkoutDate;
+    private void setCheckOutDate(Calendar checkoutDate) {
+        this.checkOutDate = checkoutDate;
     }
 
     public MediaType getType() {
@@ -67,16 +67,48 @@ abstract class Media {
         this.type = type;
     }
 
-    public Date getDueDate() {
+    public Calendar getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(Calendar dueDate) {
         this.dueDate = dueDate;
     }
 
 
+    /**
+     * This method allows to checked out this Media object.
+     * @return Returns true if successfully checked out.  False if otherwise.
+     */
+    public boolean checkOutMedia() {
+        // Make sure it is not already checked out
+        if (status == MediaStatus.CHECKED_OUT) {
+            System.out.println("Already checked out!");   // Maybe make it throw an error?
+            return false;
+        }
 
+        // Set the status to CHECKED_OUT
+        setStatus(MediaStatus.CHECKED_OUT);
+
+        // Set the check-out date
+        setCheckOutDate(Calendar.getInstance());
+
+        // Set the due date, two weeks from checkout
+        Calendar twoWeeksFromCO = Calendar.getInstance();
+        twoWeeksFromCO.add(Calendar.DAY_OF_YEAR, 14);
+        setDueDate(twoWeeksFromCO);
+
+        // Successfully checked out media
+        return true;
+    }
+
+    /**
+     * This method return a string of the title, author, and category, separated by string
+     * @return string of the title, author, and category, separated by string
+     */
+    public String getTitleAuthorCat() {
+        return getTitle() + ", " + getAuthor() + ", " + getCategory();
+    }
 
 
 }
