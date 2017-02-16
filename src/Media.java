@@ -43,7 +43,7 @@ abstract class Media {
         this.author = author;
     }
 
-    private MediaStatus getStatus() {
+    public MediaStatus getStatus() {
 
         // Make sure it is not overdue
         if (status == MediaStatus.CHECKED_OUT &&
