@@ -8,7 +8,8 @@ public class LibraryApp {
 
         LibraryDataBase ldb = new LibraryDataBase("docs/Team1LibraryDbase.csv");
         Librarian librarian = new Librarian();
-        //medialist
+        ArrayList<Media> list = new ArrayList<>();
+
 
 
 
@@ -17,11 +18,12 @@ public class LibraryApp {
 
         System.out.println("Welcome to the Grand Circus Library.");
         System.out.println("Please select an option:");
-        System.out.println("1. Search for media.");
-        System.out.println("2. Check Out");
-        System.out.println("3. Check In");
-        System.out.println("4. Place a Hold");
-        System.out.println("5. Donate");
+        System.out.println("1. Display All.");
+        System.out.println("2. Display All Available");
+        System.out.println("3. Display All Author Search");
+        System.out.println("4. Display All Title Search");
+        System.out.println("5. Display All Media Search");
+        System.out.println("6. Donate (Add)");
 
         userInput = InputValidator.getValidInteger(1, 6);
 
@@ -34,7 +36,7 @@ public class LibraryApp {
                 ldb.printMediaDatabase();
                 break;
             case 2:
-
+                list = ldb.getAllMedia();
                 break;
             case 3:
 
