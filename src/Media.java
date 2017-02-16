@@ -44,10 +44,17 @@ abstract class Media {
     }
 
     private MediaStatus getStatus() {
+
+        // Make sure it is not overdue
+        if (status == MediaStatus.CHECKED_OUT &&
+                Calendar.getInstance().get(Calendar.DAY_OF_YEAR) > getDueDate().get(Calendar.DAY_OF_YEAR)) {
+            status = MediaStatus.OVERDUE;
+        }
+
         return status;
     }
 
-    private void setStatus(MediaStatus status) {
+    protected void setStatus(MediaStatus status) {
         this.status = status;
     }
 
