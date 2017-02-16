@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.zip.CheckedInputStream;
 
 public class LibraryApp {
 
@@ -15,8 +16,6 @@ public class LibraryApp {
         String authorInput;
         String titleInput;
         String mediaInput;
-
-
 
         System.out.println("Welcome to the Grand Circus Library.");
         System.out.println("Please select an option:");
@@ -60,6 +59,6 @@ public class LibraryApp {
 
 
         }
-        
+        public static 
     }
 }
