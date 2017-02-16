@@ -38,26 +38,28 @@ public class Librarian {
         return;
     }
 
-
-//    public Librarian(Media m, LibraryDataBase ldb) {
-//        this.m = m;
-//        this.ldb = ldb;
-//    }
-
-
-//1
-    public void checkOutMedia(Media m) {
-       // LibraryDataBase.readTextFromFile("docs/Team1LibraryDbase.csv");
-        m.checkOutMedia();
-
-    }
-//1
-    public void checkInMedia(Media m, LibraryDataBase ldb) {
-        m.checkInMedia();
-
-
+    /**
+     * YK - This method will allow the librarian to check out a media according to the user input index
+     * @param list Currently displayed list
+     * @param index Choice of user, objects using this class should be careful
+     */
+    public void checkOutMedia(ArrayList<Media> list, int index) {
+        list.get(index).checkOutMedia();
+        return;
     }
 
+
+    /**
+     * YK - This method will allow the librarian to check in a media according to the user input index
+     * @param list
+     * @param index
+     */
+    public void checkInMedia(ArrayList<Media> list, int index) {
+        list.get(index).checkInMedia();
+        return;
+    }
+
+    
     // duplicated from LibraryDatabase.java to return a string type to use to create check out/check in
     public String printMediaDatabase2(){
         String med = LibraryDataBase.readTextFromFile("docs/Team1LibraryDbase.csv");
