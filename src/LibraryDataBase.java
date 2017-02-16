@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class LibraryDataBase {
 
+    private ArrayList<Media> mediaList = new ArrayList<Media>();
+
     public LibraryDataBase(String filename) {
         String med = readTextFromFile(filename);
 
@@ -33,7 +35,7 @@ public class LibraryDataBase {
         return mediaList;
     }
 
-    private ArrayList<Media> mediaList = new ArrayList<Media>();
+
 
 
 
@@ -90,11 +92,14 @@ public class LibraryDataBase {
 
         for (int i = 0; i < mediaList.size(); i++) {
 
-            if (mediaList.get(i).getStatus == Media.MediaStatus.ON_SHELF) {
+            if (mediaList.get(i).getStatus() == Media.MediaStatus.ON_SHELF) {
                 onShelf.add(mediaList.get(i));
             }
 
+
+
         }
+        return onShelf;
     }
 
 
