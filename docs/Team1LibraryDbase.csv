@@ -1,23 +1,23 @@
 Media,Title,Category,Keyword,Author 
-Book,The Wizard of Oz,Fiction,,Frank Baum
-Book,Of Mice and Men,Fiction,,John Steinbeck
-Book,Cold Mountain,Fiction,,Charles Frazier
-Book,The Life of PI,Fiction,,Yann Martel
-Book,Java For Dummies,,,
-Book,Moby Dick,Fiction,,Herman Melville
-Book,Into Thin Air,Non Fiction,,John Krakauer
-Book,Gone With the Wind,Fiction,,Margaret Mitchell
-Book,To Kill a Mockingbird,Fiction,,Harper Lee
-Book,The Far Side,Fiction,,Gary Larson
-Book,Old Yeller,Fiction,,Fred Gipson
-Book,David Copperfield,Fiction,,Charles Dickens
-Book,The Importance of Being Earnest,Fiction,,William Shakespeare
-Book,Othello,Fiction,,William Shakespeare
-Book,Twelth Night,Fiction,,William Shakespeare
-Book,Hamlet,Fiction,,William Shakespeare
-Book,The Pelican Brief,Fiction,,John Gresham
-Book,The Firm,Fiction,,John Gresham
-Book,The Street Lawyer,Fiction,,John Gresham
+Book,The Wizard of Oz,Fiction,Frank Baum
+Book,Of Mice and Men,Fiction,John Steinbeck
+Book,Cold Mountain,Fiction,Charles Frazier
+Book,The Life of PI,Fiction,Yann Martel
+Book,Java For Dummies,Non Fiction,unknown
+Book,Moby Dick,Fiction,Herman Melville
+Book,Into Thin Air,Non Fiction,John Krakauer
+Book,Gone With the Wind,Fiction,Margaret Mitchell
+Book,To Kill a Mockingbird,Fiction,Harper Lee
+Book,The Far Side,Fiction,Gary Larson
+Book,Old Yeller,Fiction,Fred Gipson
+Book,David Copperfield,Fiction,Charles Dickens
+Book,The Importance of Being Earnest,Fiction,William Shakespeare
+Book,Othello,Fiction,William Shakespeare
+Book,Twelth Night,Fiction,William Shakespeare
+Book,Hamlet,Fiction,William Shakespeare
+Book,The Pelican Brief,Fiction,John Gresham
+Book,The Firm,Fiction,John Gresham
+Book,The Street Lawyer,Fiction,John Gresham
 ,,,,
 DVD ,Of Mice and Men,Drama,,
 DVD ,Cold Mountain,Drama,,

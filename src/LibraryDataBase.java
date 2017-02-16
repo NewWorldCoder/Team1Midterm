@@ -16,23 +16,26 @@ public class LibraryDataBase {
 
 
     String[] byLine = med.split("\\n");
-    String[] columns = new String[byLine.length];
+    String[] columns;
         ArrayList<Media> mediaList = new ArrayList<Media>();
-        Book book = new Book();
-        int j = 0;
+
+
 
 
 
 
     for(int i = 1;i<=19;i++)
     {
-            for(int j = 0;j<4;j++){
-                columns = byLine[i].split(",");
-            }
-            j = 0;
+        columns = byLine[i].split(",");
+
+            mediaList.add(new Book(columns[1], columns[2],columns[3]));
+            
+
+
 
 
     }
+
 
 
 
