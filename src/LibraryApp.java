@@ -28,17 +28,15 @@ public class LibraryApp {
         userInput = InputValidator.getValidInteger(1, 6);
 
 
-        System.out.println(userInput);
-
-
         switch (userInput) {
             case 1:
                 ldb.printMediaDatabase();
                 break;
             case 2:
-                list = ldb.getAllMedia();
+                list = ldb.getAllAvailable();
+                librarian.printArray(list);
                 break;
-            case 3:
+           /* case 3:
 
                 break;
             case 4:
@@ -46,7 +44,7 @@ public class LibraryApp {
                 break;
             case 5:
 
-                break;
+                break;*/
 
 
         }
