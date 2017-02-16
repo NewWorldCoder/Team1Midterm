@@ -29,6 +29,10 @@ public class LibraryDataBase {
         }
     }
 
+    public ArrayList getAllMedia(){
+        return mediaList;
+    }
+
     private ArrayList<Media> mediaList = new ArrayList<Media>();
 
 
@@ -37,7 +41,7 @@ public class LibraryDataBase {
 
         for (int i = 0; i < mediaList.size(); i++) {
 
-            System.out.println(mediaList.get(i).getAuthor()); // Prints book objects to console.
+            System.out.println(mediaList.get(i).getTitleAuthorCat()); // Prints book objects to console.
 
         }
     }
@@ -79,6 +83,18 @@ public class LibraryDataBase {
 
         return mediaListTitles;
 
+    }
+
+    public ArrayList getAllAvailable() {
+        ArrayList<Media> onShelf = new ArrayList<Media>();
+
+        for (int i = 0; i < mediaList.size(); i++) {
+
+            if (mediaList.get(i).getStatus == Media.MediaStatus.ON_SHELF) {
+                onShelf.add(mediaList.get(i));
+            }
+
+        }
     }
 
 
