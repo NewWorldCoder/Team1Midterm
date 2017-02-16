@@ -82,7 +82,7 @@ abstract class Media {
      */
     public boolean checkOutMedia() {
         // Make sure it is not already checked out
-        if (status == MediaStatus.CHECKED_OUT) {
+        if (status == MediaStatus.CHECKED_OUT || status == MediaStatus.OVERDUE) {
             System.out.println("Already checked out!");   // Maybe make it throw an error?
             return false;
         }
@@ -101,6 +101,29 @@ abstract class Media {
         // Successfully checked out media
         return true;
     }
+
+    /**
+     * This method checks in the Media object
+     * @return
+     */
+    public boolean checkInMedia() {
+        // Make sure it is not already checked in
+        if (status == MediaStatus.ON_SHELF || status == MediaStatus.ON_HOLD) {
+            System.out.println("Already available on shelf!");
+            return false;
+        }
+
+        // Set the status to AVAILABLE
+        setStatus(MediaStatus.ON_SHELF);
+
+        // Set the dates
+        setCheckOutDate(null);
+        setDueDate(null);
+
+        // Successfully checked out media
+        return true;
+    }
+
 
     /**
      * This method return a string of the title, author, and category, separated by string
