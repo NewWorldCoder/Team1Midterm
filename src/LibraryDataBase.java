@@ -29,6 +29,10 @@ public class LibraryDataBase {
         }
     }
 
+    public ArrayList getAllMedia(){
+        return mediaList;
+    }
+
     private ArrayList<Media> mediaList = new ArrayList<Media>();
 
 
