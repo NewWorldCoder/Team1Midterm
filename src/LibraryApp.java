@@ -13,14 +13,14 @@ public class LibraryApp {
         allAuthors = library.getAllAuthor("William Shakespeare");
 
 
-        for(int i = 0;i<allAuthors.size();i++)
+        for(int i = 0;i<allAuthors.size();i++) {
 
-        System.out.println(allAuthors.get(i).getTitleAuthorCat());
+            System.out.println(allAuthors.get(i).getTitleAuthorCat());
+
+        }
 
 
 
-
-    LibraryDataBase library = new LibraryDataBase();
 
     }
 }
