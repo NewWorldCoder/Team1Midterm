@@ -5,11 +5,15 @@ public class LibraryApp {
 
     public static void main(String[] args) {
 
-            //Variable scanner will hold the object scanner
-            Scanner scan;
 
-            //build constructor
-        public LibraryApp() {
+        LibraryDataBase ldb = new LibraryDataBase("docs/Team1LibraryDbase.csv");
+        Librarian librarian = new Librarian();
+        //medialist
+
+
+
+        int userInput;
+
 
         System.out.println("Welcome to the Grand Circus Library.");
         System.out.println("Please select an option:");
@@ -18,9 +22,31 @@ public class LibraryApp {
         System.out.println("3. Check In");
         System.out.println("4. Place a Hold");
         System.out.println("5. Donate");
-            
 
+        userInput = InputValidator.getValidInteger(1, 6);
+
+
+        System.out.println(userInput);
+
+
+        switch (userInput) {
+            case 1:
+                ldb.printMediaDatabase();
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
 
 
         }
-
+    }
+}

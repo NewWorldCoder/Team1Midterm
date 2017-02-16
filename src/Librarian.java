@@ -33,12 +33,12 @@ public class Librarian {
 //1
     public void checkOutMedia(Media m) {
        // LibraryDataBase.readTextFromFile("docs/Team1LibraryDbase.csv");
-        m.checkOutMedia()
+        m.checkOutMedia();
 
     }
 //1
     public void checkInMedia(Media m, LibraryDataBase ldb) {
-        m.checkInMedia()
+        m.checkInMedia();
 
 
     }
