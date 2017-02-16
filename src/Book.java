@@ -15,4 +15,10 @@ public class Book extends Media {
         super.setAuthor(author);
         super.setType(MediaType.BOOK);
     }
+
+    
+    public String getStringTitleAuthorCat() {
+        return super.getTitle() + ", " + super.getAuthor() + ", " + super.getCategory();
+    }
+
 }
