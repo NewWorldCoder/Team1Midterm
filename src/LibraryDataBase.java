@@ -9,19 +9,48 @@ import java.util.ArrayList;
 public class LibraryDataBase {
 
 
-    ArrayList<Media> mediaList = new ArrayList<Media>();
+
 
     public static void printMediaDatabase(){
     String med = readTextFromFile("docs/Team1LibraryDbase.csv");
 
 
     String[] byLine = med.split("\\n");
+    String[] columns = new String[byLine.length];
+        ArrayList<Media> mediaList = new ArrayList<Media>();
+        Book book = new Book();
+        int j = 0;
 
-    for( int i = 0; i< byLine.length; i++)
 
+
+
+    for(int i = 1;i<=19;i++)
     {
-        System.out.println(byLine[i]);
+            for(int j = 0;j<4;j++){
+                columns = byLine[i].split(",");
+            }
+            j = 0;
+
+
     }
+
+
+
+//
+//    String[][] columns = new String[byLine.length][];
+//
+//
+//
+//    for( int i = 1; i< byLine.length; i++) //skipping first line because it's just book,
+//
+//    {
+//        for(int j = 0; j<byLine[i].length;j++)
+//        {
+//            columns[i][j]=byLine[i].split(",");
+//
+//        }
+//
+//    }
 
 }
 
