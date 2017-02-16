@@ -54,11 +54,13 @@ public class LibraryApp {
                 ldb.getAllMedia();
                 break;
             case 6:
-            dd*/
-
-
+            */
 
         }
-        public static 
+
+                System.out.println("Do you wish to do anything with you selections?");
+
+
+
     }
 }
