@@ -42,7 +42,8 @@ public class LibraryDataBase {
         }
     }
 
-    public ArrayList getAllAuthor(String author){
+    public ArrayList getAllAuthor(String author){//method returns array list of the books with
+        // the author passed as the argument to the method.
 
         ArrayList<Media> mediaListAuthors = new ArrayList<Media>();
         for(int i = 0;i<19;i++)
@@ -61,7 +62,22 @@ public class LibraryDataBase {
 
         return mediaListAuthors;
 
+    }
 
+    public ArrayList getAllTitle(String title)
+    {
+
+        ArrayList<Media> mediaListTitles = new ArrayList<Media>();
+        for(int i = 0;i<19;i++) {
+            if (mediaList.get(i).getTitle().equalsIgnoreCase(title)){
+                mediaListTitles.add(mediaList.get(i));
+            }
+            else{
+                continue;
+            }
+        }
+
+        return mediaListTitles;
 
     }
 
