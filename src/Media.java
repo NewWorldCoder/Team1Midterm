@@ -140,5 +140,9 @@ abstract class Media {
         return getTitle() + ", " + getAuthor() + ", " + getCategory();
     }
 
+    @Override
+    public String toString() {
+        return getTitle() + ", " + getAuthor() + ", " + getCategory();
+    }
 
 }

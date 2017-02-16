@@ -24,6 +24,16 @@ public class Librarian {
         this.ldb = ldb;
     }
 
+    public void printArray(ArrayList list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.toString());
+        }
+
+        return;
+    }
+
+
 //    public Librarian(Media m, LibraryDataBase ldb) {
 //        this.m = m;
 //        this.ldb = ldb;
