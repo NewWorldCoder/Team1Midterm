@@ -4,5 +4,7 @@ public class LibraryApp {
 
     LibraryDataBase.printMediaDatabase();
 
+    LibraryDataBase library = new LibraryDataBase();
+
     }
 }
