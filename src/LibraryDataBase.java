@@ -18,7 +18,7 @@ public class LibraryDataBase {
         String[] columns;
 
 
-        for(int i = 1;i<=19;i++)
+        for(int i = 0;i<=18;i++)
         {
             columns = byLine[i].split(","); //populates columns array with split of each line with a comma delimiter
 
@@ -100,7 +100,7 @@ public class LibraryDataBase {
 
     public static void writeTextToFile(String fileName, ArrayList mediaToSave)
     {
-        Path filePath = Paths.get("test.csv");
+        Path filePath = Paths.get(fileName);
 
         File productsFile = filePath.toFile();
 
@@ -116,7 +116,7 @@ public class LibraryDataBase {
                 out.println(mediaToSave.get(i).toString());
             }
 
-
+            out.flush();
             out.close();
 
         }
