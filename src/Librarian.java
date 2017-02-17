@@ -24,15 +24,16 @@ public class Librarian {
         int typeColWidth = 12;
         int titleColWidth = 35;
         int categoryColWidth = 30;
+        int authorColWidth = 30;
         int statusColWidth = 12;
         int checkOutColWidth = 18;
         int dueDateColWidth = 15;
 
         // Heading
         System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
-                "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s" +
-                        "%-" + checkOutColWidth + "s%-" + dueDateColWidth + "s\n",
-                " ", "Type", "Title", "Category", "Status", "Check Out Date", "Due Date");
+                "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" + authorColWidth +
+                        "s%-" +statusColWidth + "s\n",
+                " ", "Type", "Title", "Category", "Author", "Status");
         for (int i = 0; i < (indexColWidth+typeColWidth+titleColWidth+
                 categoryColWidth+statusColWidth+checkOutColWidth+dueDateColWidth); i++) {
             System.out.print("=");
@@ -43,9 +44,9 @@ public class Librarian {
         // Print a numbered list according to the list
         for (int i = 0; i < list.size(); i++) {
             System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
-                    "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
+                    "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" + authorColWidth + "s%-" +statusColWidth + "s\n",
                     (i+1) + ". ", list.get(i).getType().toString(), list.get(i).getTitle(),
-                    list.get(i).getCategory(), list.get(i).getStatus().toString());
+                    list.get(i).getCategory(), list.get(i).getAuthor(), list.get(i).getStatus().toString());
         }
 
         return;
