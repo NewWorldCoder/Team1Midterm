@@ -71,7 +71,25 @@ public class Librarian {
     }
 
 
-    // TODO: public boolean putOnHold()
+    /**
+     * This method will put an item on hold
+     * @param list Currently displayed list
+     * @param index Choice of user, objects using this class should be careful
+     * @return True if successfully executed, false otherwise.
+     */
+    public boolean putOnHold(ArrayList<Media> list, int index) {
+        // Check if status is available for hold
+        if (list.get(index).getStatus() != MediaStatus.ON_SHELF) {
+            System.out.println("This media cannot be put on hold!!");
+            return false;
+        }
+
+        // Put on hold
+        list.get(index).setStatus(MediaStatus.ON_HOLD);
+
+        // Executed successfully
+        return true;
+    }
 
 
     /**
