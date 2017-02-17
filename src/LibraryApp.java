@@ -32,7 +32,8 @@ public class LibraryApp {
 
         switch (userInput) {
             case 1:
-                ldb.printMediaDatabase();
+                list = ldb.getAllMedia();
+                librarian.printArray(list);
                 break;
 
             case 2:
