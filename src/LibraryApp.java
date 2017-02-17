@@ -76,7 +76,10 @@ public class LibraryApp {
         if (option.equalsIgnoreCase("Y")) {
 
             System.out.println("Please select the number associated with your selection.");
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
             int bookNum = scan1.nextInt();
             scan1.nextLine();
             librarian.checkOutMedia(list, bookNum - 1);
