@@ -22,68 +22,70 @@ public class LibraryApp {
         String yesOption;
 
         System.out.println("Welcome to the Grand Circus Library.");
-        System.out.println("Please select an option:");
-        System.out.println("1. Display All.");
-        System.out.println("2. Display All Available");
-        System.out.println("3. Display All Author Search");
-        System.out.println("4. Display All Title Search");
-        System.out.println("5. Check in Media.");
-        //  System.out.println("5. Search by Media Type");
-        //  System.out.println("6. Donate (Add)");
 
-        userInput = InputValidator.getValidInteger(1, 6);
+        while (true) {
+            System.out.println("Please select an option:");
+            System.out.println("1. Display All.");
+            System.out.println("2. Display All Available");
+            System.out.println("3. Display All Author Search");
+            System.out.println("4. Display All Title Search");
+            System.out.println("5. Check in Media.");
+            //  System.out.println("5. Search by Media Type");
+            //  System.out.println("6. Donate (Add)");
 
-        switch (userInput) {
-            case 1:
-                list = ldb.getAllMedia();
-                librarian.printArray(list);
-                break;
+            userInput = InputValidator.getValidInteger(1, 6);
 
-            case 2:
-                list = ldb.getAllAvailable();
-                librarian.printArray(list);
-                break;
+            switch (userInput) {
+                case 1:
+                    list = ldb.getAllMedia();
+                    librarian.printArray(list);
+                    break;
 
-            case 3:
-                System.out.println("Enter an author you'd like us to search for.");
-                authorInput = scan1.nextLine();
-                list = ldb.getAllAuthor(authorInput);
-                librarian.printArray(list);
-                break;
+                case 2:
+                    list = ldb.getAllAvailable();
+                    librarian.printArray(list);
+                    break;
 
-            case 4:
-                System.out.println("Enter a title you'd like us to search for.");
-                titleInput = scan1.nextLine();
-                list = ldb.getAllTitle(titleInput);
-                librarian.printArray(list);
-                break;
-            case 5:
-                list = ldb.getAllMedia(); //pull it from here
-                librarian.printArray(list); //display it from here
-                System.out.println("Enter number to be checked in.");
-                userInput = scan1.nextInt();
-                scan1.nextLine();
+                case 3:
+                    System.out.println("Enter an author you'd like us to search for.");
+                    authorInput = scan1.nextLine();
+                    list = ldb.getAllAuthor(authorInput);
+                    librarian.printArray(list);
+                    break;
 
-                //titleInput = scan1.nextLine();
-                //  librarian.checkInMedia(list);
-                //if(titleInput == list.get())
+                case 4:
+                    System.out.println("Enter a title you'd like us to search for.");
+                    titleInput = scan1.nextLine();
+                    list = ldb.getAllTitle(titleInput);
+                    librarian.printArray(list);
+                    break;
+                case 5:
+                    list = ldb.getAllMedia(); //pull it from here
+                    librarian.printArray(list); //display it from here
+                    System.out.println("Enter number to be checked in.");
+                    userInput = scan1.nextInt();
+                    scan1.nextLine();
 
-                boolean checkInSuccess;
-                checkInSuccess = librarian.checkInMedia(list, userInput - 1);
+                    //titleInput = scan1.nextLine();
+                    //  librarian.checkInMedia(list);
+                    //if(titleInput == list.get())
 
-                if (checkInSuccess == true) {
+                    boolean checkInSuccess;
+                    checkInSuccess = librarian.checkInMedia(list, userInput - 1);
 
-                    System.out.println("You have checked in: " + list.get(userInput - 1).getTitle());
-                }
+                    if (checkInSuccess == true) {
+
+                        System.out.println("You have checked in: " + list.get(userInput - 1).getTitle());
+                    }
 
 
-                librarian.printArray(list);
+                    librarian.printArray(list);
 
 //            System.out.print("The due date for this item is: ");
 //            System.out.println(librarian.printDate(list.get(bookNum - 1).getDueDate()));
 //
-                //librarian.printDueDate(list, userInput - 1);
-                //scan1.nextLine();
+                    //librarian.printDueDate(list, userInput - 1);
+                    //scan1.nextLine();
 
 
            /* case 5:
@@ -97,41 +99,49 @@ public class LibraryApp {
                 System.out.println("To donate (add) to our library, please select an option:")
                 donationInput = scan1.nextLine(donationInput);
                 break;*/
-                //break;
-        }
-
-
-        System.out.println("Do you wish to select one of these titles? Y or N");
-        // Scanner input = new Scanner(System.in);
-        option = scan1.nextLine();
-
-        if (option.equalsIgnoreCase("Y")) {
-
-            System.out.println("Please select the number associated with your selection.");
-
-            int bookNum = scan1.nextInt();
-            scan1.nextLine();
-            boolean checkOutSuccess;
-            checkOutSuccess = librarian.checkOutMedia(list, bookNum - 1);
-
-            if (checkOutSuccess == true) {
-
-                System.out.println("You have checked out: " + list.get(bookNum - 1).getTitle());
+                    //break;
             }
 
 
-            librarian.printArray(list);
+            System.out.println("Do you wish to select one of these titles? Y or N");
+            // Scanner input = new Scanner(System.in);
+            option = scan1.nextLine();
+
+            if (option.equalsIgnoreCase("Y")) {
+
+                System.out.println("Please select the number associated with your selection.");
+
+                int bookNum = scan1.nextInt();
+                scan1.nextLine();
+                boolean checkOutSuccess;
+                checkOutSuccess = librarian.checkOutMedia(list, bookNum - 1);
+
+                if (checkOutSuccess == true) {
+
+                    System.out.println("You have checked out: " + list.get(bookNum - 1).getTitle());
+                }
+
+
+                librarian.printArray(list);
 
 //            System.out.print("The due date for this item is: ");
 //            System.out.println(librarian.printDate(list.get(bookNum - 1).getDueDate()));
 //
-            librarian.printDueDate(list, bookNum - 1);
-            scan1.nextLine();
-        } else {
+                librarian.printDueDate(list, bookNum - 1);
+            }
 
-            System.out.println("Please return to the Grand Circus Library soon.");
-
+            System.out.print("Would you like to continue? (y/n) ");
+            if (!InputValidator.askUserYesNo()) {
+                break;
+            }
         }
+
+
+
+
+
+
+
         // Vicky and I will use this reference to rewrite to csv file
         ldb.writeTextToFile(fileName);
         System.out.println("Grand Circus Library thanks you for visiting the library.");
