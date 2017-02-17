@@ -133,7 +133,7 @@ public class LibraryApp {
 
         }
         // Vicky and I will use this reference to rewrite to csv file
-        ldb.writeTextToFile(fileName, list);
+        ldb.writeTextToFile(fileName);
         System.out.println("Grand Circus Library thanks you for visiting the library.");
 
     }

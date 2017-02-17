@@ -100,7 +100,7 @@ public class LibraryDataBase {
         return onShelf;
     }
 
-    public static void writeTextToFile(String fileName, ArrayList mediaToSave)
+    public void writeTextToFile(String fileName)
     {
         Path filePath = Paths.get(fileName);
 
@@ -114,8 +114,8 @@ public class LibraryDataBase {
             // PrintWriter out2 = new PrintWriter(productsFile);
 
 
-            for(int i = 0;i<mediaToSave.size();i++){
-                out.println(mediaToSave.get(i).toString());
+            for(int i = 0;i<mediaList.size();i++){
+                out.println(mediaList.get(i).toString());
             }
 
             out.flush();
