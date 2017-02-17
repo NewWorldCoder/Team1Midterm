@@ -56,9 +56,7 @@ abstract class Media {
         this.status = status;
     }
 
-    private Calendar getCheckOutDate() {
-        return checkOutDate;
-    }
+    public Calendar getCheckOutDate() { return checkOutDate; }
 
     private void setCheckOutDate(Calendar checkoutDate) {
         this.checkOutDate = checkoutDate;
