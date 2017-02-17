@@ -6,8 +6,10 @@ public class LibraryApp {
 
     public static void main(String[] args) {
 
+        String fileName = "docs/Team1LibraryDbase.csv";
+
         Scanner scan1 = new Scanner(System.in);
-        LibraryDataBase ldb = new LibraryDataBase("docs/Team1LibraryDbase.csv");
+        LibraryDataBase ldb = new LibraryDataBase(fileName);
         Librarian librarian = new Librarian();
         ArrayList<Media> list = new ArrayList<>();
 
@@ -131,7 +133,7 @@ public class LibraryApp {
 
         }
         // Vicky and I will use this reference to rewrite to csv file
-        ldb.writeTextToFile("test.csv", list);
+        ldb.writeTextToFile(fileName, list);
         System.out.println("Grand Circus Library thanks you for visiting the library.");
 
     }
