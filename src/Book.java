@@ -16,6 +16,13 @@ public class Book extends Media {
         super.setAuthor(author);
         super.setType(MediaType.BOOK);
 
+        // Set of strings to hold month, day, year
+//        String[] cOutDateSet = checkOut.split("-");
+//        String[] dDateSet = dueDate.split("-");
+
+        //
+
+
         // Set correct status according to constructor.
         status = status.toLowerCase();
         switch (status) {
