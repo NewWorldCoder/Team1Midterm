@@ -12,8 +12,8 @@ public class LibraryApp {
         ArrayList<Media> list = new ArrayList<>();
 
         int userInput;
-        String authorInput;
-        String titleInput;
+        String authorInput = "";
+        String titleInput = "";
         String mediaInput;
         String donationInput;
         String option = " ";
@@ -76,10 +76,19 @@ public class LibraryApp {
         if (option.equalsIgnoreCase("Y")) {
 
             System.out.println("Please select the number associated with your selection.");
-            // System.out.println(list.get(i).toString());    Problem here
-            // System.out.println("Enjoy the " + titleInput + ".");  Problem here
 
-        } else {
+            int bookNum = scan1.nextInt();
+            scan1.nextLine();
+            librarian.checkOutMedia(list, bookNum - 1);
+            System.out.println("You have checked out: " + list.get(bookNum-1).getTitle());
+
+            System.out.print("The due date for this item is: ");
+            System.out.println(librarian.printDate(list.get(bookNum-1).getDueDate()));
+            scan1.nextLine();
+        }
+
+        else {
+
 
             System.out.println("Please return to the Grand Circus Library soon.");
 
