@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.zip.CheckedInputStream;
@@ -24,16 +26,17 @@ public class LibraryApp {
         System.out.println("Welcome to the Grand Circus Library.");
 
         while (true) {
-            System.out.println("Please select an option:");
-            System.out.println("1. Display All.");
+            System.out.println("====== MENU =======");
+            System.out.println("1. Display All");
             System.out.println("2. Display All Available");
             System.out.println("3. Display All Author Search");
             System.out.println("4. Display All Title Search");
-            System.out.println("5. Check in Media.");
+            System.out.println("5. Check in Media");
             //  System.out.println("5. Search by Media Type");
             //  System.out.println("6. Donate (Add)");
+            System.out.print("Please select an option: ");
 
-            userInput = InputValidator.getValidInteger(1, 6);
+            userInput = InputValidator.getValidInteger(1, 5);
 
             switch (userInput) {
                 case 1:
@@ -102,14 +105,13 @@ public class LibraryApp {
                     //break;
             }
 
-
-            System.out.println("Do you wish to select one of these titles? Y or N");
+            System.out.println("Do you wish to check out one of these titles? Y or N");
             // Scanner input = new Scanner(System.in);
             option = scan1.nextLine();
 
             if (option.equalsIgnoreCase("Y")) {
 
-                System.out.println("Please select the number associated with your selection.");
+                System.out.println("Please select the item number you would like to checkout.");
 
                 int bookNum = scan1.nextInt();
                 scan1.nextLine();
