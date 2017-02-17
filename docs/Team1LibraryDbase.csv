@@ -1,46 +1,19 @@
-Media,Title,Category,Author ,
-Book,The Wizard of Oz,Fiction,Frank Baum,
-Book,Of Mice and Men,Fiction,John Steinbeck,
-Book,Cold Mountain,Fiction,Charles Frazier,
-Book,The Life of PI,Fiction,Yann Martel,
-Book,Java For Dummies,Non Fiction,unknown,
-Book,Moby Dick,Fiction,Herman Melville,
-Book,Into Thin Air,Non Fiction,John Krakauer,
-Book,Gone With the Wind,Fiction,Margaret Mitchell,
-Book,To Kill a Mockingbird,Fiction,Harper Lee,
-Book,The Far Side,Fiction,Gary Larson,
-Book,Old Yeller,Fiction,Fred Gipson,
-Book,David Copperfield,Fiction,Charles Dickens,
-Book,The Importance of Being Earnest,Fiction,William Shakespeare,
-Book,Othello,Fiction,William Shakespeare,
-Book,Twelth Night,Fiction,William Shakespeare,
-Book,Hamlet,Fiction,William Shakespeare,
-Book,The Pelican Brief,Fiction,John Gresham,
-Book,The Firm,Fiction,John Gresham,
-Book,The Street Lawyer,Fiction,John Gresham,
-,,,,
-DVD ,Of Mice and Men,Drama,,
-DVD ,Cold Mountain,Drama,,
-DVD ,The Life of PI,Drama,,
-DVD ,Caddyshack,Comedy,,
-DVD ,The Best Man,Comedy,,
-DVD ,Best Man Holiday,Drama,,
-DVD ,The Little Mermaid,Cartoon,,
-DVD ,Mystic River,Drama,,
-DVD ,The Quiet Man,Comedy,,
-DVD ,The Hunt for Red October,Drama,,
-DVD ,O Brother Where Art Thou,Comedy,,
-DVD ,Brian's Song,Drama,,
-DVD ,Star Wars; The Return of the Jedi,Drama,,
-DVD ,Star Wars; The Empire Strikes Back,Drama,,
-DVD ,The Turning Point,Drama,,
-,,,,
-CD,Greetings From Asbury Park,,,Springsteen
-CD,Born To Run,,,Springsteen
-CD,Al Green's Greatest Hits,,,Green
-CD,The Sound of Music Soundtrack,,,Andrews
-CD,In the Wee Small Hours of the Morning,,,Sinatra
-CD,Live at the Pershing,,,Jamal
-CD,Hard Days Night,,,Beatles
-CD,25,,,
-CD,Lemonade,,,
+Book,The Wizard of Oz,Fiction,Frank Baum,On Shelf,N/A,N/A
+Book,Of Mice and Men,Fiction,John Steinbeck,On Shelf,N/A,N/A
+Book,Cold Mountain,Fiction,Charles Frazier,On Shelf,N/A,N/A
+Book,The Life of PI,Fiction,Yann Martel,On Shelf,N/A,N/A
+Book,Java For Dummies,Non Fiction,unknown,On Shelf,N/A,N/A
+Book,Moby Dick,Fiction,Herman Melville,On Shelf,N/A,N/A
+Book,Into Thin Air,Non Fiction,John Krakauer,On Shelf,N/A,N/A
+Book,Gone With the Wind,Fiction,Margaret Mitchell,On Shelf,N/A,N/A
+Book,To Kill a Mockingbird,Fiction,Harper Lee,On Shelf,N/A,N/A
+Book,The Far Side,Fiction,Gary Larson,On Shelf,N/A,N/A
+Book,Old Yeller,Fiction,Fred Gipson,On Shelf,N/A,N/A
+Book,David Copperfield,Fiction,Charles Dickens,On Shelf,N/A,N/A
+Book,The Importance of Being Earnest,Fiction,William Shakespeare,On Shelf,N/A,N/A
+Book,Othello,Fiction,William Shakespeare,On Shelf,N/A,N/A
+Book,Twelth Night,Fiction,William Shakespeare,On Shelf,N/A,N/A
+Book,Hamlet,Fiction,William Shakespeare,On Shelf,N/A,N/A
+Book,The Pelican Brief,Fiction,John Gresham,Checked Out,2/14/2017,2/28/2014
+Book,The Firm,Fiction,John Gresham,On Shelf,N/A,N/A
+Book,The Street Lawyer,Fiction,John Gresham,On Shelf,N/A,N/A

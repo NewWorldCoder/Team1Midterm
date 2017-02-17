@@ -22,22 +22,26 @@ public class Librarian {
         // Variables to set width of each column
         int indexColWidth = 5;
         int typeColWidth = 12;
-        int titleColWidth = 30;
+        int titleColWidth = 35;
         int categoryColWidth = 30;
-        int statusColWidth = 10;
+        int statusColWidth = 12;
+        int checkOutColWidth = 18;
+        int dueDateColWidth = 15;
 
         // Heading
         System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
-                "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
-                " ", "Type", "Title", "Category", "Status");
-        for (int i = 0; i < (typeColWidth+titleColWidth+categoryColWidth+statusColWidth); i++) {
+                "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s" +
+                        "%-" + checkOutColWidth + "s%-" + dueDateColWidth + "s\n",
+                " ", "Type", "Title", "Category", "Status", "Check Out Date", "Due Date");
+        for (int i = 0; i < (indexColWidth+typeColWidth+titleColWidth+
+                categoryColWidth+statusColWidth+checkOutColWidth+dueDateColWidth); i++) {
             System.out.print("=");
         }
         System.out.println();
 
+        // TODO: Print the check in / check out date
         // Print a numbered list according to the list
         for (int i = 0; i < list.size(); i++) {
-            System.out.println((i+1) + ". " + list.get(i).toString());
             System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
                     "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
                     (i+1) + ". ", list.get(i).getType().toString(), list.get(i).getTitle(),
@@ -55,8 +59,8 @@ public class Librarian {
      * @return True if executed successfully, false otherwise
      */
     public boolean checkOutMedia(ArrayList<Media> list, int index) {
-        list.get(index).checkOutMedia();
-        return true;
+        // Will return false if already checkedout
+        return list.get(index).checkOutMedia();
     }
 
 
@@ -66,8 +70,8 @@ public class Librarian {
      * @param index Choice of user, objects using this class should be careful
      */
     public boolean checkInMedia(ArrayList<Media> list, int index) {
-        list.get(index).checkInMedia();
-        return true;
+        // Will return false if already checkedin
+        return list.get(index).checkInMedia();
     }
 
 
