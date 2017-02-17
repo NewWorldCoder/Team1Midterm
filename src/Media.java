@@ -139,7 +139,11 @@ abstract class Media {
     // TODO: Does this need to return it in a specific format for LibraryDataBase class?
     @Override
     public String toString() {
-        return getType() + "," + getTitle() + "," + getCategory()+ "," + getAuthor();
+        return getType().toString() + ","
+                + getTitle() + ","
+                + getCategory()+ ","
+                + getAuthor() + ","
+                + getStatus().toString();
     }
 
 }
