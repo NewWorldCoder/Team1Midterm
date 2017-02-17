@@ -25,6 +25,7 @@ public class LibraryApp {
         System.out.println("2. Display All Available");
         System.out.println("3. Display All Author Search");
         System.out.println("4. Display All Title Search");
+        System.out.println("5. Check in Media.");
         //  System.out.println("5. Search by Media Type");
         //  System.out.println("6. Donate (Add)");
 
@@ -54,6 +55,14 @@ public class LibraryApp {
                 list = ldb.getAllTitle(titleInput);
                 librarian.printArray(list);
                 break;
+            case 5:
+                System.out.println("Enter title to be checked in.");
+                titleInput = scan1.nextLine();
+              //  librarian.checkInMedia(list);
+                //if(titleInput == list.get())
+
+
+
 
            /* case 5:
                 System.out.println("Please select Book, DVD or CD to narrow your search by media type");
@@ -77,25 +86,42 @@ public class LibraryApp {
         if (option.equalsIgnoreCase("Y")) {
 
             System.out.println("Please select the number associated with your selection.");
+
             int bookNum = scan1.nextInt();
             scan1.nextLine();
             librarian.checkOutMedia(list, bookNum - 1);
-            System.out.println("You have checked out: " + list.get(bookNum-1).getTitle());
+
+
+            System.out.println("You have checked out: " + list.get(bookNum - 1).getTitle());
+
+            librarian.printArray(list);
 
             System.out.print("The due date for this item is: ");
-            System.out.println(librarian.printDate(list.get(bookNum-1).getDueDate()));
+            System.out.println(librarian.printDate(list.get(bookNum - 1).getDueDate()));
             scan1.nextLine();
-        }
-
-        else {
-
+        } else {
 
             System.out.println("Please return to the Grand Circus Library soon.");
 
         }
+        // Vicky and I will use this reference to rewrite to csv file
+        ldb.writeTextToFile("test.csv", list);
+        System.out.println("Do you wish to do anything with you selections?");
+        
 
-        ldb.writeTextToFile("docs/Team1LibraryDbase.csv", list);
-        //System.out.println("Do you wish to do anything with you selections?");
+//    public static void checkIn()
+//    {
+//
+//        Scanner input = new Scanner(System.in);
+//        librarian.checkInMedia(list, getTitle());
+//        scan1.nextLine();
+//
+//            Library.BookList.add(checkInMedia);
+//            System.out.println("-----" + bookCheckIn + " has been checked in!-----");
+//
+//
+//
+//        }
 
     }
 
