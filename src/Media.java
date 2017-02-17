@@ -10,11 +10,9 @@ abstract class Media {
     private String title;                                                    // Holds the title of the Media object
     private String category;                                                 // Holds the category of the Media object
     private String author;                                                   // Holds the author of the Media object
-    static enum MediaStatus {ON_SHELF, CHECKED_OUT, OVERDUE, ON_HOLD};       // Enum for status of the Media object
     private MediaStatus status;                                              // Status for Media Object
-    private Calendar checkOutDate;                                               // Holds the checkout date
-    private Calendar dueDate;                                                    // Holds the due date
-    static enum MediaType {BOOK, CD, DVD, AUDIO_BOOK, PERIODICAL, REFERENCE} // Enum for the type of the Media object
+    private Calendar checkOutDate;                                           // Holds the checkout date
+    private Calendar dueDate;                                                // Holds the due date
     private MediaType type;
 
 

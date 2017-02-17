@@ -64,7 +64,7 @@ public class Librarian {
 
     
     /**
-     * YK - This method provides
+     * YK - This method prints detailed information about an object
      * @param list
      * @param index
      */
