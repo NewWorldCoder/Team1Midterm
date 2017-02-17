@@ -17,11 +17,30 @@ public class Librarian {
      * YK - Prints a numbered list according to the ArrayList returned by LibraryDataBase
      * @param list ArrayList created by the LibraryDataBase
      */
-    public void printArray(ArrayList list) {
+    public void printArray(ArrayList<Media> list) {
+        // Variables to set width of each column
+        int indexColWidth = 5;
+        int typeColWidth = 12;
+        int titleColWidth = 30;
+        int categoryColWidth = 30;
+        int statusColWidth = 10;
 
-        // YK - Print a numbered list according to
+        // Heading
+        System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
+                "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
+                " ", "Type", "Title", "Category", "Status");
+        for (int i = 0; i < (typeColWidth+titleColWidth+categoryColWidth+statusColWidth); i++) {
+            System.out.print("=");
+        }
+        System.out.println();
+
+        // Print a numbered list according to the list
         for (int i = 0; i < list.size(); i++) {
             System.out.println((i+1) + ". " + list.get(i).toString());
+            System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
+                    "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
+                    (i+1) + ". ", list.get(i).getType().toString(), list.get(i).getTitle(),
+                    list.get(i).getCategory(), list.get(i).getStatus().toString());
         }
 
         return;
