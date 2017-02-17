@@ -30,7 +30,7 @@ public class Librarian {
         System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
                 "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
                 " ", "Type", "Title", "Category", "Status");
-        for (int i = 0; i < (typeColWidth+titleColWidth+categoryColWidth+statusColWidth); i++) {
+        for (int i = 0; i < (indexColWidth+typeColWidth+titleColWidth+categoryColWidth+statusColWidth); i++) {
             System.out.print("=");
         }
         System.out.println();
