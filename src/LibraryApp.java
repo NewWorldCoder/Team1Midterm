@@ -79,7 +79,7 @@ public class LibraryApp {
         }
 
 
-        System.out.println("Do you wish to do anything with you selections? Y or N");
+        System.out.println("Do you wish to select one of these titles? Y or N");
         Scanner input = new Scanner(System.in);
         option = input.nextLine();
 
@@ -89,10 +89,14 @@ public class LibraryApp {
 
             int bookNum = scan1.nextInt();
             scan1.nextLine();
-            librarian.checkOutMedia(list, bookNum - 1);
+            boolean checkOutSuccess;
+            checkOutSuccess = librarian.checkOutMedia(list, bookNum - 1);
 
+        if (checkOutSuccess == true) {
 
             System.out.println("You have checked out: " + list.get(bookNum - 1).getTitle());
+        }
+
 
             librarian.printArray(list);
 
@@ -106,8 +110,9 @@ public class LibraryApp {
         }
         // Vicky and I will use this reference to rewrite to csv file
         ldb.writeTextToFile("test.csv", list);
-        System.out.println("Do you wish to do anything with you selections?");
-        
+        System.out.println("Grand Circus Library thanks you for visiting the library.");
+
+
 
 //    public static void checkIn()
 //    {
