@@ -16,7 +16,7 @@ public enum MediaType {
             case AUDIO_BOOK:
                 return "Audio Book";
             case PERIODICAL:
-                return "Periodical"
+                return "Periodical";
             case REFERENCE:
                 return "Reference";
             default:
