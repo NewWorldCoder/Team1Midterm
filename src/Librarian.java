@@ -39,6 +39,7 @@ public class Librarian {
         }
         System.out.println();
 
+        // TODO: Print the check in / check out date
         // Print a numbered list according to the list
         for (int i = 0; i < list.size(); i++) {
             System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
@@ -58,8 +59,8 @@ public class Librarian {
      * @return True if executed successfully, false otherwise
      */
     public boolean checkOutMedia(ArrayList<Media> list, int index) {
-        list.get(index).checkOutMedia();
-        return true;
+        // Will return false if already checkedout
+        return list.get(index).checkOutMedia();
     }
 
 
@@ -69,8 +70,8 @@ public class Librarian {
      * @param index Choice of user, objects using this class should be careful
      */
     public boolean checkInMedia(ArrayList<Media> list, int index) {
-        list.get(index).checkInMedia();
-        return true;
+        // Will return false if already checkedin
+        return list.get(index).checkInMedia();
     }
 
 
