@@ -13,6 +13,7 @@ public class Librarian {
         // Do nothing
     }
 
+
     /**
      * YK - Prints a numbered list according to the ArrayList returned by LibraryDataBase
      * @param list ArrayList created by the LibraryDataBase
@@ -74,11 +75,25 @@ public class Librarian {
      * @param list Currently displayed list
      * @param index Choice of user, objects using this class should be careful
      */
-    public void printDueDate(ArrayList<Media> list, int index) {
+    public boolean printDueDate(ArrayList<Media> list, int index) {
+        // Make sure that the item is actually checked out.
+        if (list.get(index).getStatus() == MediaStatus.ON_HOLD || list.get(index).getStatus() == MediaStatus.ON_SHELF) {
+            System.out.println("The media is not checked out!!");
+            return false;
+        }
+
+        // Print the due date
         System.out.print("The due date for this item is: ");
         System.out.print(list.get(index).getDueDate().get(Calendar.MONTH) + "-");
         System.out.print(list.get(index).getDueDate().get(Calendar.DAY_OF_MONTH) + "-");
-        System.out.print(list.get(index).getDueDate().get(Calendar.YEAR));
+        System.out.println(list.get(index).getDueDate().get(Calendar.YEAR));
+
+        // Print whether overdue or not
+        if (list.get(index).getStatus() == MediaStatus.OVERDUE) {
+            System.out.println("The media is overdue!!  Please bring back ASAP!!");
+        }
+
+        return true;
     }
 
     
