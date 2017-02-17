@@ -94,8 +94,8 @@ public class LibraryApp {
 
         }
 
-        ldb.writeTextToFile("test.csv", list);
-        System.out.println("Do you wish to do anything with you selections?");
+        ldb.writeTextToFile("docs/Team1LibraryDbase.csv", list);
+        //System.out.println("Do you wish to do anything with you selections?");
 
     }
 

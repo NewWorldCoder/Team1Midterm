@@ -22,7 +22,7 @@ public class LibraryDataBase {
         {
             columns = byLine[i].split(","); //populates columns array with split of each line with a comma delimiter
 
-            mediaList.add(new Book(columns[1], columns[2],columns[3]));//populates mediaList with Book objects//
+            mediaList.add(new Book(columns[1], columns[2],columns[3],columns[4]));//populates mediaList with Book objects//
         }
     }
 
