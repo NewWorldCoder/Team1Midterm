@@ -56,12 +56,32 @@ public class LibraryApp {
                 librarian.printArray(list);
                 break;
             case 5:
-                System.out.println("Enter title to be checked in.");
-                titleInput = scan1.nextLine();
-              //  librarian.checkInMedia(list);
+                list = ldb.getAllMedia(); //pull it from here
+                librarian.printArray(list); //display it from here
+                System.out.println("Enter number to be checked in.");
+                userInput = scan1.nextInt();
+                scan1.nextLine();
+
+                //titleInput = scan1.nextLine();
+                //  librarian.checkInMedia(list);
                 //if(titleInput == list.get())
 
+                boolean checkInSuccess;
+                checkInSuccess = librarian.checkInMedia(list, userInput - 1);
 
+                if (checkInSuccess == true) {
+
+                    System.out.println("You have checked in: " + list.get(userInput - 1).getTitle());
+                }
+
+
+                librarian.printArray(list);
+
+//            System.out.print("The due date for this item is: ");
+//            System.out.println(librarian.printDate(list.get(bookNum - 1).getDueDate()));
+//
+                //librarian.printDueDate(list, userInput - 1);
+                //scan1.nextLine();
 
 
            /* case 5:
@@ -75,13 +95,13 @@ public class LibraryApp {
                 System.out.println("To donate (add) to our library, please select an option:")
                 donationInput = scan1.nextLine(donationInput);
                 break;*/
-
+                //break;
         }
 
 
         System.out.println("Do you wish to select one of these titles? Y or N");
-        Scanner input = new Scanner(System.in);
-        option = input.nextLine();
+        // Scanner input = new Scanner(System.in);
+        option = scan1.nextLine();
 
         if (option.equalsIgnoreCase("Y")) {
 
@@ -92,16 +112,18 @@ public class LibraryApp {
             boolean checkOutSuccess;
             checkOutSuccess = librarian.checkOutMedia(list, bookNum - 1);
 
-        if (checkOutSuccess == true) {
+            if (checkOutSuccess == true) {
 
-            System.out.println("You have checked out: " + list.get(bookNum - 1).getTitle());
-        }
+                System.out.println("You have checked out: " + list.get(bookNum - 1).getTitle());
+            }
 
 
             librarian.printArray(list);
 
-            System.out.print("The due date for this item is: ");
-            System.out.println(librarian.printDate(list.get(bookNum - 1).getDueDate()));
+//            System.out.print("The due date for this item is: ");
+//            System.out.println(librarian.printDate(list.get(bookNum - 1).getDueDate()));
+//
+            librarian.printDueDate(list, bookNum - 1);
             scan1.nextLine();
         } else {
 
@@ -112,24 +134,7 @@ public class LibraryApp {
         ldb.writeTextToFile("test.csv", list);
         System.out.println("Grand Circus Library thanks you for visiting the library.");
 
-
-
-//    public static void checkIn()
-//    {
-//
-//        Scanner input = new Scanner(System.in);
-//        librarian.checkInMedia(list, getTitle());
-//        scan1.nextLine();
-//
-//            Library.BookList.add(checkInMedia);
-//            System.out.println("-----" + bookCheckIn + " has been checked in!-----");
-//
-//
-//
-//        }
-
     }
-
 
     public void addDonateMedia() {
 
