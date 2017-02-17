@@ -22,12 +22,7 @@ public class LibraryDataBase {
         {
             columns = byLine[i].split(","); //populates columns array with split of each line with a comma delimiter
 
-            mediaList.add(new Book(columns[1], columns[2],columns[3]));//populates mediaList with Book objects
-
-
-
-
-
+            mediaList.add(new Book(columns[1], columns[2],columns[3]));//populates mediaList with Book objects//
         }
     }
 
@@ -88,11 +83,12 @@ public class LibraryDataBase {
     }
 
     public ArrayList getAllAvailable() {
+        // returns an ArrayList of everything that is currently on the shelf.
         ArrayList<Media> onShelf = new ArrayList<Media>();
 
         for (int i = 0; i < mediaList.size(); i++) {
 
-            if (mediaList.get(i).getStatus() == Media.MediaStatus.ON_SHELF) {
+            if (mediaList.get(i).getStatus() == MediaStatus.ON_SHELF) {
                 onShelf.add(mediaList.get(i));
             }
 
@@ -100,6 +96,38 @@ public class LibraryDataBase {
 
         }
         return onShelf;
+    }
+
+    public static void writeTextToFile(String fileName, ArrayList mediaToSave)
+    {
+        Path filePath = Paths.get("test.csv");
+
+        File productsFile = filePath.toFile();
+
+        try {
+            PrintWriter out = new PrintWriter(new FileOutputStream(
+                    productsFile, false)); // append = true
+
+
+            // PrintWriter out2 = new PrintWriter(productsFile);
+
+
+            for(int i = 0;i<mediaToSave.size();i++){
+                out.println(mediaToSave.get(i).toString());
+            }
+
+
+            out.close();
+
+        }
+
+        catch (FileNotFoundException ex)
+        {
+
+
+
+        }
+
     }
 
 
