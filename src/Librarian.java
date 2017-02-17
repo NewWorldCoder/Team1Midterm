@@ -37,7 +37,6 @@ public class Librarian {
 
         // Print a numbered list according to the list
         for (int i = 0; i < list.size(); i++) {
-            System.out.println((i+1) + ". " + list.get(i).toString());
             System.out.printf("%-" + indexColWidth + "s" + "%-" + typeColWidth + "s" +
                     "%-" + titleColWidth + "s%-" + categoryColWidth + "s%-" +statusColWidth + "s\n",
                     (i+1) + ". ", list.get(i).getType().toString(), list.get(i).getTitle(),
