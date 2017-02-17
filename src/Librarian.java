@@ -52,10 +52,11 @@ public class Librarian {
      * YK - This method will allow the librarian to check out a media according to the user input index
      * @param list Currently displayed list
      * @param index Choice of user, objects using this class should be careful
+     * @return True if executed successfully, false otherwise
      */
-    public void checkOutMedia(ArrayList<Media> list, int index) {
+    public boolean checkOutMedia(ArrayList<Media> list, int index) {
         list.get(index).checkOutMedia();
-        return;
+        return true;
     }
 
 
@@ -64,9 +65,24 @@ public class Librarian {
      * @param list Currently displayed list
      * @param index Choice of user, objects using this class should be careful
      */
-    public void checkInMedia(ArrayList<Media> list, int index) {
+    public boolean checkInMedia(ArrayList<Media> list, int index) {
         list.get(index).checkInMedia();
-        return;
+        return true;
+    }
+
+
+    // TODO: public boolean putOnHold()
+
+
+    /**
+     * This method returns a string with the date in the format of MM-DD-YYYY
+     * @param calendar Calendar object
+     * @return Date in format of MM-DD-YYYY
+     */
+    public static String printDate(Calendar calendar) {
+        return calendar.get(Calendar.MONTH) + "-" +
+                calendar.get(Calendar.DAY_OF_MONTH) + "-" +
+                calendar.get(Calendar.YEAR);
     }
 
 
@@ -74,6 +90,7 @@ public class Librarian {
      * YK - This method will print the due date of an object
      * @param list Currently displayed list
      * @param index Choice of user, objects using this class should be careful
+     * @return True if executed successfully, false otherwise
      */
     public boolean printDueDate(ArrayList<Media> list, int index) {
         // Make sure that the item is actually checked out.
@@ -84,9 +101,7 @@ public class Librarian {
 
         // Print the due date
         System.out.print("The due date for this item is: ");
-        System.out.print(list.get(index).getDueDate().get(Calendar.MONTH) + "-");
-        System.out.print(list.get(index).getDueDate().get(Calendar.DAY_OF_MONTH) + "-");
-        System.out.println(list.get(index).getDueDate().get(Calendar.YEAR));
+        System.out.println(printDate(list.get(index).getDueDate()));
 
         // Print whether overdue or not
         if (list.get(index).getStatus() == MediaStatus.OVERDUE) {
@@ -96,17 +111,31 @@ public class Librarian {
         return true;
     }
 
-    
-    /**
-     * YK - This method prints detailed information about an object
-     * @param list
-     * @param index
-     */
-    public void lookUpMediaInfo(ArrayList<Media> list, int index) {
-        // TODO: Maybe this can provide more information about an object
-        list.get(index).toString();
-        return;
-    }
 
+    /**
+     *  YK - This method prints detailed information about a media
+     * @param list Currently displayed list
+     * @param index Choice of user, objects using this class should be careful
+     * @return True if executed successfully, false otherwise
+     */
+    public boolean lookUpMediaInfo(ArrayList<Media> list, int index) {
+
+        // Print details
+        System.out.printf("%12s%-s\n", "TITLE:  ", list.get(index).getTitle());
+        System.out.printf("%12s%-s\n", "AUTHOR:  ", list.get(index).getAuthor());
+        System.out.printf("%12s%-s\n", "CATEGORY:  ", list.get(index).getCategory());
+        System.out.printf("%12s%-s\n", "TYPE:  ", list.get(index).getTitle());
+        System.out.printf("%12s%-s\n", "STATUS:  ", list.get(index).getStatus().toString());
+
+        // If checked out, then print check out date and due date
+        if (list.get(index).getStatus() == MediaStatus.CHECKED_OUT
+                || list.get(index).getStatus() == MediaStatus.OVERDUE) {
+            System.out.printf("%12s%-s\n", "CHECKOUT DATE:  ", printDate(list.get(index).getCheckOutDate()));
+            System.out.printf("%12s%-s\n", "DUE DATE:  ", printDate(list.get(index).getDueDate()));
+        }
+
+        // Return true if executed correctly
+        return true;
+    }
 
 }
