@@ -14,7 +14,6 @@ public class Book extends Media {
         super.setTitle(title);
         super.setCategory(category);
         super.setAuthor(author);
-        super.setStatus(MediaStatus.ON_SHELF);
         super.setType(MediaType.BOOK);
 
         // Set correct status according to constructor.

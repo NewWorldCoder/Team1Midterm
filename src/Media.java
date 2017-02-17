@@ -13,7 +13,7 @@ abstract class Media {
     private MediaStatus status;                                              // Status for Media Object
     private Calendar checkOutDate;                                           // Holds the checkout date
     private Calendar dueDate;                                                // Holds the due date
-    private MediaType type;
+    private MediaType type;                                                  // Holds the media type
 
 
     // Getters and Setters
@@ -44,10 +44,14 @@ abstract class Media {
     public MediaStatus getStatus() {
 
         // Make sure it is not overdue
-        if (status == MediaStatus.CHECKED_OUT &&
-                Calendar.getInstance().get(Calendar.DAY_OF_YEAR) > getDueDate().get(Calendar.DAY_OF_YEAR)) {
-            status = MediaStatus.OVERDUE;
-        }
+        // TODO: This can be re-populated when the file can hold that information
+//        if (status == MediaStatus.CHECKED_OUT &&
+//                Calendar.getInstance()
+//                        .get(Calendar.DAY_OF_YEAR)
+//                        > getDueDate()
+//                        .get(Calendar.DAY_OF_YEAR)) {
+//            status = MediaStatus.OVERDUE;
+//        }
 
         return status;
     }
@@ -143,7 +147,7 @@ abstract class Media {
                 + getTitle() + ","
                 + getCategory()+ ","
                 + getAuthor() + ","
-                + getStatus().toString();
+                + getStatus();
     }
 
 }
