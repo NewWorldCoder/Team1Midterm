@@ -22,7 +22,7 @@ public class Librarian {
         // Variables to set width of each column
         int indexColWidth = 5;
         int typeColWidth = 12;
-        int titleColWidth = 30;
+        int titleColWidth = 35;
         int categoryColWidth = 30;
         int statusColWidth = 10;
 
