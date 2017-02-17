@@ -42,7 +42,7 @@ public class LibraryApp {
 
             case 3:
                 System.out.println("Enter an author you'd like us to search for.");
-                authorInput= scan1.nextLine();
+                authorInput = scan1.nextLine();
                 list = ldb.getAllAuthor(authorInput);
                 librarian.printArray(list);
                 break;
@@ -73,22 +73,22 @@ public class LibraryApp {
         Scanner input = new Scanner(System.in);
         option = input.nextLine();
 
-        if(option.equalsIgnoreCase("Y")) {
+        if (option.equalsIgnoreCase("Y")) {
 
             System.out.println("Please select the number associated with your selection.");
             // System.out.println(list.get(i).toString());    Problem here
             // System.out.println("Enjoy the " + titleInput + ".");  Problem here
 
-        }
-
-        else {
+        } else {
 
             System.out.println("Please return to the Grand Circus Library soon.");
 
         }
-        
-        ldb.writeTextToFile("test.csv",list);
-                System.out.println("Do you wish to do anything with you selections?");
+
+        ldb.writeTextToFile("test.csv", list);
+        System.out.println("Do you wish to do anything with you selections?");
+
+    }
 
 
     public void addDonateMedia() {
